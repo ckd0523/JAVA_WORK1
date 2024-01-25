@@ -68,9 +68,24 @@ public class ChatClient {
 			chatClient.receive();
 			
 			System.out.println("-------------------------------");
-			System.out.println("보낼 메세지를");
+			System.out.println("보낼 메세지를 입력하고 Enter");
+			System.out.println("채팅을 종료하려면 q를 입력하고 Enter");
 			System.out.println("-------------------------------");
 			
+			while(true) {
+				String message = scanner.nextLine();
+				if(message.toLowerCase().equals("q")) {
+					break;
+				}else {
+					jsonObject = new JSONObject();
+					jsonObject.put("command", "message");
+					jsonObject.put("data", message);
+					json = jsonObject.toString();
+					chatClient.send(json);
+				}
+			}
+			scanner.close();
+			chatClient.unconnect();
 			
 		}
 		catch(IOException e) {System.out.println("[클라이언트] 서버 연결 안됨");}

@@ -1,3 +1,4 @@
+/*
 package ch19.sec07;
 
 import java.io.DataInputStream;
@@ -18,7 +19,7 @@ public class ScoketClient {
 	String clientIp;
 	String chatName;
 	
-	public Socket(ChatServer chatServer, Socket socket) {
+	public SocketClient(ChatServer chatServer, Socket socket) {
 		try {
 			
 			this.chatServer=chatServer;
@@ -31,9 +32,11 @@ public class ScoketClient {
 			receive();
 			}
 			
-		}
+		
 		catch(IOException e) {}
 	}
+}
+
 
 	public void receive() {
 		chatServer.threadPool.execute(()->{
@@ -84,3 +87,4 @@ public class ScoketClient {
 		catch(Exception e) {}
 	}
 	}
+*/
