@@ -68,9 +68,9 @@ public class JTableExample extends JFrame {
 			pSouth.add(pNameInput);
 			
 			JPanel pAgeInput = new JPanel();
-			pNameInput.setLayout(new GridLayout(1, 2));
+			pAgeInput.setLayout(new GridLayout(1, 2));
 			pAgeInput.add(new JLabel("나이", JLabel.CENTER));
-			pAgeInput.add(getTxtName());
+			pAgeInput.add(getTxtAge());
 			pSouth.add(pAgeInput);
 			
 			JPanel pButton = new JPanel();
