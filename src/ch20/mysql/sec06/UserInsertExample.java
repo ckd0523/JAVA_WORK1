@@ -24,15 +24,14 @@ public class UserInsertExample {
 			
 			// 매개변수로 SQL문 작성
 			String sql = "" +
-					"insert into users (userid, username, userpassword, userage, useremail)" +
-					"VALUES(?, ?, ?, ?, ?)";
+					"insert into member_table (uname, uemail, password)" +
+					"VALUES(?, ?, ?)";
 			
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "winter");
-			pstmt.setString(2, "한겨울");
+			pstmt.setString(1, "ckd123");
+			pstmt.setString(2, "이");
 			pstmt.setString(3, "12345");
-			pstmt.setString(4, "25");
-			pstmt.setString(5, "winter@mycompany.com");
+			
 			
 			int rows = pstmt.executeUpdate();
 			System.out.println("저장된 행 수 : "+rows);
